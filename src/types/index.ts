@@ -60,6 +60,8 @@ export interface ProjectProps {
   tags?: string[];
   linkPreview?: string;
   linkSource?: string;
+  linkPlayStore?: string;
+  linkAppStore?: string;
   linkTryApk?: string;
 }
 

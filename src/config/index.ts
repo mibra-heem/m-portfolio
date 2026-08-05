@@ -111,7 +111,8 @@ export const SITE_CONTENT: SiteContent = {
       subtitle: "Pest Control Field Management",
       summary: "Developed a pest control management application using Flutter for the mobile app and PHP/CodeIgniter for backend APIs. Integrated Google Calendar API, Google Sign-In, Google Maps, role-based access control, and live background location tracking for field technicians.",
       tags: ["Flutter", "CodeIgniter", "Google Maps", "REST API", "Live Tracking"],
-      linkPreview: "https://play.google.com/store",
+      linkPlayStore: "https://play.google.com/store/apps/details?id=com.solexp.apc_system&hl=en",
+      linkAppStore: "https://apps.apple.com/us/app/apc-system/id6758428910",
       image: "",
     },
     {
