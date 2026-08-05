@@ -25,7 +25,7 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "Facebook", icon: 'facebook.svg', href: "https://www.facebook.com/profile.php?id=61579216200868" },
     { text: "X", icon: 'x.svg', href: "https://x.com/ibraheem_dev" },
   ],
-  socialImage: "/portfolio-cover.jpg",
+  socialImage: "/portfolio-cover.png",
   canonicalURL: "https://mibraheem-dev.vercel.app/",
 };
 
