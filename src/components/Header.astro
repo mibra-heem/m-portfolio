@@ -66,8 +66,26 @@ const { siteLogo, navLinks } = Astro.props;
   };
 
   button?.addEventListener("click", toggleMenu);
+
+  // Helper to activate a nav link by ID
+  const setActiveNav = (id: string) => {
+    navItems.forEach((item) => {
+      const href = item.getAttribute("href");
+      if (href === `#${id}`) {
+        item.classList.add("text-white", "md:after:opacity-100");
+      } else {
+        item.classList.remove("text-white", "md:after:opacity-100");
+      }
+    });
+  };
+
+  // Add click listener to set active immediately on click
   navItems.forEach((item) => {
     item?.addEventListener("click", () => {
+      const href = item.getAttribute("href");
+      if (href?.startsWith("#")) {
+        setActiveNav(href.substring(1));
+      }
       if (window.innerWidth < 640) {
         menu?.classList.add("hidden");
         button?.setAttribute("aria-expanded", "false");
@@ -75,34 +93,56 @@ const { siteLogo, navLinks } = Astro.props;
     });
   });
 
+  // Query all section and footer elements with an ID
+  const sections = document.querySelectorAll("section[id], footer[id]");
+
   // Update navigation based on scroll position with Intersection Observer
   const observer = new IntersectionObserver(
     (entries) => {
+      // Check if user is scrolled near the bottom of the page (for Contact footer)
+      const isAtBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
+
+      if (isAtBottom) {
+        setActiveNav("contact");
+        return;
+      }
+
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("href") === `#${entry.target.id}`) {
-              item.classList.add("text-white", "md:after:opacity-100");
-            } else {
-              item.classList.remove("text-white", "md:after:opacity-100");
-            }
-          });
+          setActiveNav(entry.target.id);
         }
       });
     },
-    { threshold: 0.5 },
+    {
+      threshold: 0.05,
+      rootMargin: "-15% 0px -40% 0px",
+    },
   );
 
-  document.querySelectorAll("section").forEach((section) => {
+  sections.forEach((section) => {
     observer.observe(section);
   });
+
+  // Scroll listener fallback for bottom of page
+  window.addEventListener(
+    "scroll",
+    () => {
+      const isAtBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
+      if (isAtBottom) {
+        setActiveNav("contact");
+      }
+    },
+    { passive: true },
+  );
 
   // Cleanup observer
   document.onvisibilitychange = () => {
     if (document.visibilityState === "hidden") {
       observer.disconnect();
     } else {
-      document.querySelectorAll("section").forEach((section) => {
+      sections.forEach((section) => {
         observer.observe(section);
       });
     }
