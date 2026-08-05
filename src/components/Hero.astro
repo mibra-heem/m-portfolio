@@ -1,0 +1,77 @@
+---
+import type { HeroProps } from "@types";
+import { Image } from "astro:assets";
+
+type Props = HeroProps & { image?: string };
+
+const { name, specialty, summary, email, tagline, image = "/ibrahim.png" } = Astro.props;
+---
+
+<section class="py-16 md:py-24" id="hero">
+  <div class="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_auto] lg:items-center">
+    {/* Left Column: Text & CTAs */}
+    <div class="flex flex-col items-start">
+      {/* Availability Badge */}
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+        </span>
+        Available for Lead & Mobile Roles
+      </div>
+
+      <h1 class="mb-2 font-serif text-5xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl">
+        {name}
+      </h1>
+      
+      <p class="mb-6 font-serif text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+        {specialty}
+      </p>
+
+      <p class="mb-8 max-w-2xl text-base font-normal leading-relaxed text-neutral md:text-lg">
+        {summary}
+      </p>
+
+      {/* Action Buttons & Contact info */}
+      <div class="flex flex-wrap items-center gap-4">
+        <a
+          class="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-medium text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:bg-blue-600 hover:shadow-primary/40 hover:-translate-y-0.5"
+          href={`mailto:${email}`}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Get in Touch
+        </a>
+
+        <a
+          class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-4 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-white/40 hover:bg-white/10 hover:-translate-y-0.5"
+          href="#projects"
+        >
+          View Projects
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    {/* Right Column: Hero Profile Image Card */}
+    <div class="flex justify-center lg:justify-end">
+      <div class="relative group">
+        {/* Glow ambient background */}
+        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary to-blue-600 opacity-40 blur-xl transition-all duration-500 group-hover:opacity-75"></div>
+        
+        <div class="relative h-72 w-64 overflow-hidden rounded-3xl border border-white/15 bg-[#161d27] p-2 shadow-2xl sm:h-80 sm:w-72 lg:h-96 lg:w-80">
+          <Image
+            class="h-full w-full rounded-2xl object-cover transition-transform duration-500 group-hover:scale-105"
+            src={image}
+            width="320"
+            height="384"
+            alt={name}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

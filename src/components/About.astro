@@ -1,0 +1,61 @@
+---
+import Section from "./Section.astro";
+import type { AboutProps, HeroProps } from "@types";
+
+type Props = AboutProps & Pick<HeroProps, "name">;
+
+const { description, name } = Astro.props;
+---
+
+<Section text="About Me" href="about">
+  <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-stretch">
+    {/* Description Paragraphs (Left Column) */}
+    <div class="lg:col-span-7 flex flex-col justify-center">
+      <p class="text-base leading-relaxed text-neutral md:text-lg">
+        {description}
+      </p>
+    </div>
+
+    {/* Bold Highlight Box (Right Column) */}
+    <div class="lg:col-span-5 flex flex-col justify-stretch">
+      <div class="relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-[#1c232d] via-[#161d27] to-[#0f141c] p-6 sm:p-8 shadow-xl">
+        <div class="absolute -top-16 -right-16 h-64 w-64 rounded-full bg-primary/15 blur-3xl pointer-events-none"></div>
+        
+        <div>
+          <h3 class="mb-4 font-serif text-xl font-bold leading-snug text-white sm:text-2xl">
+            Architecting Scalable Mobile Architecture & High-Performance Flutter Apps
+          </h3>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3">
+              <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/20 text-xs font-bold text-primary">
+                ✓
+              </div>
+              <p class="text-sm font-medium text-white/90">
+                <strong class="text-primary font-semibold">Clean Architecture:</strong> Scalable, modular codebases with BLoC, GetX, & Provider.
+              </p>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/20 text-xs font-bold text-primary">
+                ✓
+              </div>
+              <p class="text-sm font-medium text-white/90">
+                <strong class="text-primary font-semibold">API & Performance:</strong> REST APIs, optimized DB queries, & sub-2s response times.
+              </p>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/20 text-xs font-bold text-primary">
+                ✓
+              </div>
+              <p class="text-sm font-medium text-white/90">
+                <strong class="text-primary font-semibold">End-to-End Delivery:</strong> App Store & Google Play Console live publishing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Section>

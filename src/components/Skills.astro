@@ -1,0 +1,25 @@
+---
+import Section from "./Section.astro";
+import type { SkillProps } from "@types";
+
+interface Props {
+  skills: SkillProps[];
+}
+
+const { skills } = Astro.props;
+---
+
+<Section text="Tech Stack" href="skills">
+  <div class="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-8">
+    {
+      skills.map(({ name, icon }) => (
+        <div class="flex flex-col items-center text-center group">
+          <div class="mb-3 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5 shadow-md shadow-black/20 backdrop-blur-sm transition-transform duration-200 group-hover:scale-105 border border-white/5">
+            <img src={icon.startsWith('/') ? icon : `/${icon}`} alt={name} class="h-8 w-8 object-contain" />
+          </div>
+          <span class="text-base font-medium text-neutral">{name}</span>
+        </div>
+      ))
+    }
+  </div>
+</Section>

@@ -1,0 +1,118 @@
+---
+import type { SiteConfig } from "@types";
+
+type Props = Pick<SiteConfig, "author" | "socialLinks"> & {
+  email?: string;
+  phone?: string;
+  location?: string;
+};
+
+const {
+  author,
+  socialLinks,
+  email = "ibraheem.dev.pk@gmail.com",
+  phone = "+92 311 4095332",
+  location = "Lahore, Pakistan",
+} = Astro.props;
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer id="contact" class="w-full pt-16 pb-12">
+  <div class="mx-auto max-w-6xl px-5 sm:px-8">
+    {/* Large Contact Box */}
+    <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#18202a] via-[#121720] to-[#0c1017] p-8 sm:p-12 md:p-14 shadow-2xl">
+      {/* Top Right Glow Effect */}
+      <div class="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-primary/15 blur-3xl pointer-events-none"></div>
+
+      {/* Contact Badge */}
+      <div class="mb-6 inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-primary">
+        <span class="h-[1.5px] w-6 bg-primary"></span>
+        Contact
+      </div>
+
+      {/* Main Headline */}
+      <h2 class="mb-4 font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+        Want to work together? <br />
+        <span class="text-primary italic">Let's talk.</span>
+      </h2>
+
+      {/* Paragraph Description */}
+      <p class="mb-10 max-w-2xl text-base leading-relaxed text-neutral sm:text-lg">
+        I'm open to full-time Flutter roles, freelance projects, and contract work. If you need someone who can build the app and ship it to both stores — drop me a line.
+      </p>
+
+      {/* Contact Info Row */}
+      <div class="mb-10 grid grid-cols-1 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3">
+        {/* EMAIL */}
+        <div class="flex items-start gap-3">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <span class="block text-[11px] font-mono font-bold uppercase tracking-wider text-neutral/70">Email</span>
+            <a href={`mailto:${email}`} class="text-sm font-semibold text-white transition-colors hover:text-primary">
+              {email}
+            </a>
+          </div>
+        </div>
+
+        {/* PHONE */}
+        <div class="flex items-start gap-3">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+          </div>
+          <div>
+            <span class="block text-[11px] font-mono font-bold uppercase tracking-wider text-neutral/70">Phone</span>
+            <a href={`tel:${phone.replace(/\s+/g, '')}`} class="text-sm font-semibold text-white transition-colors hover:text-primary">
+              {phone}
+            </a>
+          </div>
+        </div>
+
+        {/* LOCATION */}
+        <div class="flex items-start gap-3">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <div>
+            <span class="block text-[11px] font-mono font-bold uppercase tracking-wider text-neutral/70">Location</span>
+            <span class="text-sm font-semibold text-white">
+              {location}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Social Buttons Row */}
+      <div class="flex flex-wrap items-center gap-3">
+        {socialLinks.map(({ text, icon, href }) => (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={text || "Social Link"}
+            class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white transition-all duration-300 hover:border-primary hover:bg-primary hover:scale-105"
+          >
+            <img src={icon.startsWith('/') ? icon : `/${icon}`} alt={text} class="h-5 w-5 object-contain" />
+          </a>
+        ))}
+      </div>
+    </div>
+
+    {/* Bottom Copyright & Tagline Bar */}
+    <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-neutral sm:flex-row">
+      <p>© {currentYear} {author}. All rights reserved.</p>
+      <p class="font-mono text-[11px] uppercase tracking-wider text-neutral/60">
+        FLUTTER · CLEAN ARCHITECTURE · LAHORE
+      </p>
+    </div>
+  </div>
+</footer>
