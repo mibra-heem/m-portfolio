@@ -9,7 +9,7 @@ interface Props {
 const { volunteer } = Astro.props;
 ---
 
-<Section text="Leadership Experience" href="leadership">
+<Section text="Leadership Experience" href="leadership" class="pt-8 pb-14" titleMb="mb-8">
   <div class="relative space-y-12">
     {
       volunteer.map(({ organization, position, startDate, endDate, summary }) => (

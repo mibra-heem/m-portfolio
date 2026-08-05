@@ -7,7 +7,7 @@ type Props = AboutProps & Pick<HeroProps, "name">;
 const { description, name } = Astro.props;
 ---
 
-<Section text="About Me" href="about">
+<Section text="About Me" href="about" class="pt-10 pb-12" titleMb="mb-8">
   <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-stretch">
     {/* Description Paragraphs (Left Column) */}
     <div class="lg:col-span-7 flex flex-col justify-center">

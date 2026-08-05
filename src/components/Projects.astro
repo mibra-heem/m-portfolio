@@ -10,7 +10,7 @@ interface Props {
 const { projects } = Astro.props;
 ---
 
-<Section text="Featured Projects" href="projects">
+<Section text="Featured Projects" href="projects" class="pt-8 pb-14" titleMb="mb-8">
   <div class="relative flex flex-col gap-10">
     {
       projects.map(

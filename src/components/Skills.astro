@@ -7,19 +7,58 @@ interface Props {
 }
 
 const { skills } = Astro.props;
+
+const coreNames = ["Flutter", "Laravel", "Firebase", "Supabase", "MySQL"];
+const toolNames = ["GitHub", "Antigravity", "Canva"];
+
+const coreSkills = skills.filter((s) => coreNames.includes(s.name));
+const toolSkills = skills.filter((s) => toolNames.includes(s.name));
 ---
 
-<Section text="Tech Stack" href="skills">
-  <div class="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-8">
-    {
-      skills.map(({ name, icon }) => (
-        <div class="flex flex-col items-center text-center group">
-          <div class="mb-3 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5 shadow-md shadow-black/20 backdrop-blur-sm transition-transform duration-200 group-hover:scale-105 border border-white/5">
-            <img src={icon.startsWith('/') ? icon : `/${icon}`} alt={name} class="h-8 w-8 object-contain" />
-          </div>
-          <span class="text-base font-medium text-neutral">{name}</span>
+<Section text="Tech Stack" href="skills" class="pt-8 pb-10" titleMb="mb-8">
+  <div class="space-y-10">
+    {/* Core Stack Subgroup */}
+    {coreSkills.length > 0 && (
+      <div>
+        <div class="mb-5 flex items-center gap-2">
+          <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+          <span class="font-mono text-xs font-semibold uppercase tracking-widest text-primary">
+            Core Stack
+          </span>
         </div>
-      ))
-    }
+        <div class="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-5">
+          {coreSkills.map(({ name, icon }) => (
+            <div class="flex flex-col items-center text-center group">
+              <div class="mb-3 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5 shadow-md shadow-black/20 backdrop-blur-sm transition-transform duration-200 group-hover:scale-105 border border-white/5">
+                <img src={icon.startsWith('/') ? icon : `/${icon}`} alt={name} class="h-8 w-8 object-contain" />
+              </div>
+              <span class="text-base font-medium text-neutral">{name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {/* Tools & Platforms Subgroup */}
+    {toolSkills.length > 0 && (
+      <div>
+        <div class="mb-5 flex items-center gap-2">
+          <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+          <span class="font-mono text-xs font-semibold uppercase tracking-widest text-primary">
+            Tools & Platforms
+          </span>
+        </div>
+        <div class="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-5">
+          {toolSkills.map(({ name, icon }) => (
+            <div class="flex flex-col items-center text-center group">
+              <div class="mb-3 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5 shadow-md shadow-black/20 backdrop-blur-sm transition-transform duration-200 group-hover:scale-105 border border-white/5">
+                <img src={icon.startsWith('/') ? icon : `/${icon}`} alt={name} class="h-8 w-8 object-contain" />
+              </div>
+              <span class="text-base font-medium text-neutral">{name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
   </div>
 </Section>

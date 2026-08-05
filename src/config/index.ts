@@ -9,13 +9,12 @@ export const SITE_CONFIG: SiteConfig = {
   siteLogo: "/ibrahim.jpg",
   navLinks: [
     { text: "About", href: "#about" },
+    { text: "Projects", href: "#projects" },
     { text: "Tech Stack", href: "#skills" },
     { text: "Experience", href: "#experience" },
     { text: "Leadership", href: "#leadership" },
-    { text: "Projects", href: "#projects" },
     { text: "Open Source", href: "#contributions" },
     { text: "Contact", href: "#contact" },
-    // { text: "Education", href: "#education" },
   ],
   socialLinks: [
     { text: "GitHub", icon: 'github.svg', href: "https://github.com/mibra-heem" },
