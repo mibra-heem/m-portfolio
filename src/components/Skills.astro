@@ -8,8 +8,22 @@ interface Props {
 
 const { skills } = Astro.props;
 
-const coreNames = ["Flutter", "Laravel", "Firebase", "Supabase", "MySQL"];
-const toolNames = ["GitHub", "Antigravity", "Canva"];
+const coreNames = [
+  "Flutter",
+  "BLoC",
+  "Laravel",
+  "Firebase",
+  "Supabase",
+  "MySQL",
+  "MS SQL Server",
+];
+const toolNames = [
+  "Android Studio",
+  "Xcode",
+  "GitHub",
+  "Antigravity",
+  "Canva",
+];
 
 const coreSkills = skills.filter((s) => coreNames.includes(s.name));
 const toolSkills = skills.filter((s) => toolNames.includes(s.name));
@@ -26,7 +40,7 @@ const toolSkills = skills.filter((s) => toolNames.includes(s.name));
             Core Stack
           </span>
         </div>
-        <div class="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-5">
+        <div class="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-7">
           {coreSkills.map(({ name, icon }) => (
             <div class="flex flex-col items-center text-center group">
               <div class="mb-3 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/5 shadow-md shadow-black/20 backdrop-blur-sm transition-transform duration-200 group-hover:scale-105 border border-white/5">

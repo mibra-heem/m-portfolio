@@ -43,12 +43,16 @@ export const SITE_CONTENT: SiteContent = {
   },
   skills: [
     { name: "Flutter", icon: "flutter.svg" },
+    { name: "BLoC", icon: "bloc.svg" },
     { name: "Laravel", icon: "laravel.svg" },
     { name: "Firebase", icon: "firebase.svg" },
     { name: "Supabase", icon: "supabase.svg" },
     { name: "MySQL", icon: "mysql.svg" },
-    { name: "Antigravity", icon: "antigravity.svg" },
+    { name: "MS SQL Server", icon: "microsoftsqlserver.svg" },
+    { name: "Android Studio", icon: "androidstudio.svg" },
+    { name: "Xcode", icon: "xcode.svg" },
     { name: "GitHub", icon: "github.svg" },
+    { name: "Antigravity", icon: "antigravity.svg" },
     { name: "Canva", icon: "canva.svg" },
   ],
   experience: [
