@@ -116,7 +116,7 @@ export const SITE_CONTENT: SiteContent = {
       tags: ["Flutter", "CodeIgniter", "Google Maps", "REST API", "Live Tracking"],
       linkPlayStore: "https://play.google.com/store/apps/details?id=com.solexp.apc_system&hl=en",
       linkAppStore: "https://apps.apple.com/us/app/apc-system/id6758428910",
-      image: "/apc-cover.png",
+      image: "/apc.webp",
     },
     {
       name: "Multynet",
@@ -139,7 +139,7 @@ export const SITE_CONTENT: SiteContent = {
       tags: ["Flutter", "Firebase", "Agora SDK", "Laravel API"],
       linkPreview: "https://github.com/mibra-heem/chat_app_flutter/tree/main?tab=readme-ov-file#-video-demo-",
       linkSource: "https://github.com/mibra-heem/chat_app_flutter",
-      image: "/mustye-cover.png",
+      image: "/mustye.webp",
     },
     {
       name: "Mohart",
@@ -148,7 +148,7 @@ export const SITE_CONTENT: SiteContent = {
       tags: ["Flutter", "Stripe Payment", "Laravel", "Cart Management"],
       linkPreview: "https://github.com/mibra-heem/ecommerce-app?tab=readme-ov-file#-video-demo-",
       linkSource: "https://github.com/mibra-heem/ecommerce-app",
-      image: "/mohart-cover.png",
+      image: "/mohart.webp",
     },
     {
       name: "Mohart Admin",
@@ -157,7 +157,7 @@ export const SITE_CONTENT: SiteContent = {
       tags: ["Flutter", "Admin Panel", "Laravel API", "Product Management"],
       linkPreview: "https://github.com/mibra-heem/ecommerce_admin_app?tab=readme-ov-file#-video-demo-",
       linkSource: "https://github.com/mibra-heem/ecommerce_admin_app",
-      image: "/mohart-admin-cover.png",
+      image: "/mohart-admin.webp",
     },
     {
       name: "Reminiss",
@@ -165,14 +165,14 @@ export const SITE_CONTENT: SiteContent = {
       summary: "Reminiss is a personal memory app that lets users capture experiences and attach them to locations. Built with Supabase authentication and Mapbox maps for seamless saving and revisiting of places.",
       tags: ["Flutter", "Supabase", "Mapbox Maps", "Auth"],
       linkSource: "https://github.com/mibra-heem/reminiss",
-      image: "/reminiss-cover.png",
+      image: "/reminiss.webp",
     },
     {
       name: "Hugh & Bucks",
       subtitle: "Restaurant & QR Redemption App",
       summary: "A restaurant app with 3 sections: community (admin), vendor & customer. Vendors scan customer QR codes to redeem items on success.",
       tags: ["Flutter", "QR Scanner", "Multi-role", "Vendor App"],
-      image: "/hugh-bucks-cover.png",
+      image: "/hugh.webp",
     },
   ],
   contributions: [
