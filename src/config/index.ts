@@ -119,6 +119,15 @@ export const SITE_CONTENT: SiteContent = {
       image: "/apc.webp",
     },
     {
+      name: "Bluestone",
+      subtitle: "Facility & Maintenance Management System",
+      summary: "Developed an enterprise Computerized Maintenance Management System (CMMS) & Field Service Management application using Flutter for the mobile app and Laravel Sanctum for backend REST APIs. Integrated real-time WebSocket event streams, Google Maps & geolocation tracking, role-based access control, Provider state management with Clean Architecture, and complete workflows for reactive & preventive work orders, inventory spare parts, and facility locations.",
+      tags: ["Flutter", "Laravel Sanctum", "Google Maps", "REST API", "WebSocket", "Provider", "Clean Architecture"],
+      linkPlayStore: "https://play.google.com/store/apps/details?id=com.solexp.bluestone&hl=en",
+      linkAppStore: "https://apps.apple.com/us/app/bluestone-cmms/id6758428911",
+      image: "/bluestone.webp",
+    },
+    {
       name: "Multynet",
       subtitle: "Product Scanner & Operations",
       summary: "Revamped a multi-role product scanning application for Admins and Salespersons with polished UI/UX and optimized data-fetching. Reduced dashboard load times by over 80% (15s to under 2s) through architectural refactoring and efficient API query design.",
