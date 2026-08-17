@@ -6,7 +6,7 @@
 
 A modern, responsive, and high-performance personal portfolio website for **Muhammad Ibrahim** (Lead Flutter Developer & Mobile Engineer), built with **Astro**, **TypeScript**, and **Tailwind CSS**.
 
-![Portfolio Cover Image](https://raw.githubusercontent.com/mibra-heem/m-portfolio/main/public/portfolio-cover.png)
+![Portfolio Cover Image](./public/portfolio-cover.png)
 
 ## ✨ Features
 
